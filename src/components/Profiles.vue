@@ -304,7 +304,7 @@ export default Vue.extend({
   border-radius: 20px !important;
   padding: 100px 11px 22px 14px;
   margin-top: 100px;
-  @media screen and (max-width: 960px) {
+  @media screen and (min-width: 600px) and (max-width: 960px) {
     padding: 20px;
     margin-top: 5px;
   }
