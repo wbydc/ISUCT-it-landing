@@ -29,7 +29,7 @@ export default Vue.extend({
     h2 {
       max-width: 1000px;
       @media screen and (max-width: 960px) {
-        max-width: 600px;
+        max-width: 660px;
       }
     }
   }

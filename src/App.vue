@@ -151,4 +151,23 @@ section {
     text-transform: uppercase;
   }
 }
+
+.icon {
+  width: 30px;
+  height: 30px;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  &.vk {
+    -webkit-mask: url(./assets/icons/vk.png) no-repeat center;
+    mask: url(./assets/icons/vk.png) no-repeat center;
+  }
+  &.viber {
+    -webkit-mask: url(./assets/icons/viber.png) no-repeat center;
+    mask: url(./assets/icons/viber.png) no-repeat center;
+  }
+  &.fb {
+    -webkit-mask: url(./assets/icons/fb.png) no-repeat center;
+    mask: url(./assets/icons/fb.png) no-repeat center;
+  }
+}
 </style>

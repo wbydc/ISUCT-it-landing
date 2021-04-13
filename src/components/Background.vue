@@ -1,8 +1,8 @@
 <template>
   <div class="header-bg">
     <img class="header-bg-xs d-flex d-sm-none" alt="Backgroung" src="../assets/header-bg-xs.svg" />
-    <img class="header-bg-sm d-none d-sm-flex d-md-none" alt="Backgroung" src="../assets/header-bg-sm.svg" />
-    <img class="header-bg-md d-none d-md-flex d-lg-none" alt="Backgroung" src="../assets/header-bg-md.svg" />
+    <img class="header-bg-sm d-none d-md-none d-sm-flex " alt="Backgroung" src="../assets/header-bg-sm.svg" />
+    <img class="header-bg-md d-none d-md-flex" alt="Backgroung" src="../assets/header-bg-md.svg" />
   </div>
 </template>
 

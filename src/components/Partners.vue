@@ -41,6 +41,11 @@ export default Vue.extend({
       height: 100%;
     }
   }
+  @media screen and (max-width: 1440px) {
+    margin-left: -32px;
+    max-width: 98vw;
+    overflow-x: hidden;
+  }
   @media screen and (max-width: 960px) {
     margin-left: -18px;
     max-width: 100vw;

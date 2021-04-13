@@ -27,7 +27,7 @@
             </span>
           </v-card-actions>
 
-          <div class="d-none d-sm-flex profile-image-sm">
+          <div class="profile-image-sm d-none d-sm-flex d-md-none">
             <v-img :src="profile.src" />
           </div>
         </v-card>

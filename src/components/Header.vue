@@ -31,7 +31,7 @@
             >
               <template slot="selection">
                 <span class="fg">
-                  <v-icon>mdi-translate</v-icon>
+                  <span>{{ locale }}</span>
                 </span>
               </template>
             </v-select>
@@ -58,13 +58,14 @@
               item-text="title"
               item-value="code"
               hide-details
+
               solo
               flat
               background-color="rgba(0,0,0,0)"
             >
               <template slot="selection">
                 <span class="fg">
-                  <v-icon>mdi-translate</v-icon>
+                  <span>{{ locale }}</span>
                 </span>
               </template>
             </v-select>
@@ -74,7 +75,7 @@
         </v-col>
       </v-row>
 
-      <v-navigation-drawer v-model="sidebar" app>
+      <v-navigation-drawer v-model="sidebar" app width="100%">
         <v-card flat>
           <v-card-title class="logo-text">
             <span v-html="$t('header.title')"></span>
@@ -104,19 +105,17 @@
 
     <div class="banner">
       <v-row>
-        <v-col md="6" sm="6" class="d-flex d-sm-none">
+        <v-col md="5" sm="6" class="d-flex d-sm-none">
           <v-img src="../assets/header.png" class="header-xs" />
         </v-col>
-        <v-col md="6" sm="8">
+        <v-col md="7" sm="8">
           <h1>{{ $t('header.banner.title') }}</h1>
           <p class="my-11">{{ $t('header.banner.text') }}</p>
-          <v-btn class="mt-1" href="#contacts">
-            <a href="#contacts" v-smooth-scroll>
-              {{ $t('header.banner.button') }}
-            </a>
+          <v-btn class="mt-1" href="https://vk.com/digit37">
+            {{ $t('header.banner.button') }}
           </v-btn>
         </v-col>
-        <v-col md="6" sm="6" class="hidden-xs-only">
+        <v-col md="5" sm="6" class="hidden-xs-only">
           <v-img id="header-img" src="../assets/header.png" />
         </v-col>
       </v-row>
@@ -177,8 +176,11 @@ export default Vue.extend({
   line-height: 22px;
   margin-right: 0;
   a {
-    color: #777F9C;
+    color: #777F9C !important;
     margin-right: 30px;
+    &:active {
+      color: #1B84FF !important;
+    }
   }
 }
 
@@ -196,6 +198,7 @@ export default Vue.extend({
 .locale-changer {
   margin-top: 10px;
   max-width: 32px;
+  text-transform: uppercase;
   @media screen and (max-width: 960px) {
     max-width: 56px;
   }
@@ -230,9 +233,30 @@ export default Vue.extend({
     @media screen and (max-width: 960px) {
       margin-top: 0;
     }
+    @media screen and (max-width: 600px) {
+      margin-top: 35px;
+    }
   }
   a {
     color: #FFF !important;
+  }
+  p {
+    @media screen and (min-width: 960px) {
+      max-width: 600px;
+    }
+  }
+  .v-btn {
+    width: 334px;
+    height: 68px !important;
+    border-radius: 30px;
+    @media screen and (max-width: 960px) {
+      width: 244px;
+      height: 50px !important;
+    }
+    @media screen and (max-width: 600px) {
+      width: 334px;
+      height: 40px !important;
+    }
   }
   .d-flex.d-sm-none {
     padding: 0 65px;
@@ -258,5 +282,8 @@ export default Vue.extend({
 .logo-text b {
   font-weight: bold;
   color: #1B84FF;
+}
+.locale-changer .v-input__append-inner {
+  display: none !important;
 }
 </style>

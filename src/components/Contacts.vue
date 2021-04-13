@@ -51,7 +51,7 @@
             :href="social.url"
             target="_blank"
           >
-            <v-icon>mdi-{{ social.icon }}</v-icon>
+            <div :class="`icon ${social.icon}`"></div>
           </v-btn>
         </div>
       </v-col>
@@ -153,11 +153,11 @@ export default Vue.extend({
           url: 'https://vk.me/digit37?message=test',
         },
         {
-          icon: 'vimeo',
+          icon: 'viber',
           url: 'viber://chat?number=79206783390',
         },
         {
-          icon: 'facebook',
+          icon: 'fb',
           url: 'https://facebook.com/digit37',
         },
       ],
@@ -213,6 +213,9 @@ h3 {
   }
   > :first-child {
     margin-left: -16px;
+  }
+  .icon {
+    background-color: #1B84FF;
   }
 }
 .v-card {

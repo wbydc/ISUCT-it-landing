@@ -1,14 +1,14 @@
 <template>
   <section id="footer">
     <v-row>
-      <v-col md="10" sm="9" cols="6">
+      <v-col md="10" sm="9" cols="7">
         <p>
           © 2021 {{ $t('header.banner.title') }}
           <span class="text-right">Created by <a href="https://t.me/wbydc" target="_blank">@wbydc</a></span>
         </p>
       </v-col>
-      <v-col md="2" sm="3" cols="6">
-        <div class="d-flex d-md-none socials">
+      <v-col md="2" sm="3" cols="5">
+        <div class="d-flex d-md-none socials float-right">
           <v-btn
             v-for="(social, i) in socials"
             :key="i"
@@ -16,7 +16,7 @@
             :href="social.url"
             target="_blank"
           >
-            <v-icon>mdi-{{ social.icon }}</v-icon>
+            <div :class="`icon ${social.icon}`"></div>
           </v-btn>
         </div>
       </v-col>
@@ -37,11 +37,11 @@ export default Vue.extend({
           url: 'https://vk.me/digit37',
         },
         {
-          icon: 'vimeo',
+          icon: 'viber',
           url: 'viber://chat?number=79206783390',
         },
         {
-          icon: 'facebook',
+          icon: 'fb',
           url: 'https://facebook.com/digit37',
         },
       ],
@@ -69,8 +69,8 @@ export default Vue.extend({
         line-height: 35px;
       }
       @media screen and (max-width: 600px) {
-        font-size: 14px;
-        line-height: 14px;
+        font-size: 10px;
+        line-height: 10px;
       }
       span {
         font-size: 10px;
@@ -84,14 +84,17 @@ export default Vue.extend({
     }
   }
   .socials {
-    padding: 20px;
-    @media screen and (max-width: 960px) {
-      padding: 0 30px;
-    }
     .v-btn {
       padding: 0;
       min-width: 0;
-      margin-right: 15px;
+      margin-left: 15px;
+    }
+    .icon {
+      width: 22px;
+      background-color: #FFF;
+      @media screen and (max-width: 600px) {
+        width: 20px;
+      }
     }
   }
 }
