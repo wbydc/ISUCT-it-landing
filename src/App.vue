@@ -11,6 +11,7 @@
       <Contacts />
     </div>
     <Footer />
+    <ToTop />
   </v-app>
 </template>
 
@@ -26,6 +27,7 @@ import Spheres from '@/components/Spheres.vue';
 import Partners from '@/components/Partners.vue';
 import Contacts from '@/components/Contacts.vue';
 import Footer from '@/components/Footer.vue';
+import ToTop from '@/components/ToTop.vue';
 
 export default Vue.extend({
   name: 'App',
@@ -39,6 +41,7 @@ export default Vue.extend({
     Partners,
     Contacts,
     Footer,
+    ToTop,
   },
 });
 </script>
@@ -128,9 +131,11 @@ section {
   padding: 0 16px;
   @media screen and (max-width: 960px) {
     margin-bottom: 75px;
+    padding: 0 39px;
   }
   @media screen and (max-width: 600px) {
     margin-bottom: 45px;
+    padding: 0 16px;
   }
 }
 .content {

@@ -10,11 +10,23 @@
     </div>
 
     <div class="mt-10">
-      <v-row class="hidden-xs-only about-images">
-        <v-col sm="4" v-for="i in 3" :key="i">
-          <v-img :src="`images/about/${i}.jpg`" :aspect-ratio="44/27"></v-img>
-        </v-col>
-      </v-row>
+      <div class="hidden-xs-only about-images">
+        <div class="about-images__nav about-images__nav__prev">
+          <v-btn plain @click="() => i--">
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-btn>
+        </div>
+        <v-row>
+          <v-col sm="4" v-for="i in 3" :key="i">
+            <v-img :src="`images/about/${img(i)}.jpg`" :aspect-ratio="44/27"></v-img>
+          </v-col>
+        </v-row>
+        <div class="about-images__nav about-images__nav__next">
+          <v-btn plain @click="() => i++">
+            <v-icon>mdi-chevron-right</v-icon>
+          </v-btn>
+        </div>
+      </div>
       <v-carousel
         a-cycle
         interval="10000"
@@ -28,7 +40,7 @@
           :key="i"
           class="about-image"
         >
-          <v-img :src="`images/about/${i}.jpg`"></v-img>
+          <v-img :src="`images/about/${i}.jpg`" width="92vw" :aspect-ratio="363/200"></v-img>
         </v-carousel-item>
       </v-carousel>
     </div>
@@ -42,8 +54,16 @@ export default Vue.extend({
   name: 'About',
   data() {
     return {
+      i: 0,
       isExpanded: false,
     };
+  },
+  methods: {
+    img(p: number) {
+      let c: number = this.i + p;
+      while (c < 0) { c += 6; }
+      return c % 6 || 6;
+    },
   },
 });
 </script>
@@ -55,17 +75,45 @@ export default Vue.extend({
   padding: 0 !important;
   height: 20px !important;
 }
-.about-image {
-  width: 90vw;
-  height: 179px;
-}
-</style>
-<style lang="scss">
 .about-images {
+  position: relative;
+  &__nav {
+    position: absolute;
+    top: 0;
+    padding-top: 12px;
+    width: 50px;
+    &__prev {
+      left: -50px;
+      @media screen and (max-width: 960px) {
+        left: -40px;
+      }
+    }
+    &__next {
+      right: -50px;
+      @media screen and (max-width: 960px) {
+        right: -40px;
+      }
+    }
+    .v-btn {
+      height: 270px !important;
+      min-width: 50px !important;
+      padding: 0 13px !important;
+      @media screen and (max-width: 960px) {
+        height: 138px !important;
+      }
+    }
+  }
   .v-image {
     border-radius: 9px;
   }
 }
+.about-carousel {
+  .v-image {
+    border-radius: 15px;
+  }
+}
+</style>
+<style lang="scss">
 .about-carousel {
   .v-carousel__controls__item {
     &.v-btn--icon {

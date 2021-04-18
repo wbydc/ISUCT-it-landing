@@ -47,7 +47,8 @@ export default Vue.extend({
     overflow-x: hidden;
   }
   @media screen and (max-width: 960px) {
-    margin-left: -18px;
+    left: -12px;
+    width: 100vw;
     max-width: 100vw;
     overflow-x: hidden;
   }

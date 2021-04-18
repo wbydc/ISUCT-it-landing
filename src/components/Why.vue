@@ -11,10 +11,10 @@
         <v-card flat>
           <img :src="`images/why/${i}.svg`" />
           <v-card-title>
-            <h3>{{ $t(`why.cards[${i-1}].title`) }}</h3>
+            <h3 v-html="$t(`why.cards[${i-1}].title`)"></h3>
           </v-card-title>
           <v-card-text class="d-none d-md-flex">
-            <p>{{ $t(`why.cards[${i-1}].text`) }}</p>
+            <p v-html="$t(`why.cards[${i-1}].text`)"></p>
           </v-card-text>
         </v-card>
       </v-col>

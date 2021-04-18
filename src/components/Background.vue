@@ -32,6 +32,9 @@ export default Vue.extend({
   .header-bg-md {
     left: 812px;
     z-index: 1;
+    @media screen and (max-width: 1440px) {
+      left: 612px;
+    }
   }
 }
 </style>

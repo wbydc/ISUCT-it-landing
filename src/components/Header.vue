@@ -70,7 +70,7 @@
               </template>
             </v-select>
           </span>
-          <v-app-bar-nav-icon @click="sidebar = !sidebar">
+          <v-app-bar-nav-icon @click="sidebar = !sidebar" class="fg">
           </v-app-bar-nav-icon>
         </v-col>
       </v-row>
@@ -100,6 +100,7 @@
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-card-actions>
+        <v-img class="bg" src="images/header/bg.png"></v-img>
       </v-navigation-drawer>
     </div>
 
@@ -205,7 +206,7 @@ export default Vue.extend({
 }
 .v-navigation-drawer {
   padding-top: 20px;
-  background-color: #E5E5E5;
+  background-color: #E7EFFA !important;
   a {
     display: block;
     margin-bottom: 28px;
@@ -223,6 +224,22 @@ export default Vue.extend({
       line-height: 35px;
       color: #35363A
     }
+  }
+  .v-card {
+    background-color: inherit;
+    &__text {
+      padding-right: 150px;
+    }
+    &__actions {
+      position: absolute;
+      top: 10px;
+      right: 0;
+    }
+  }
+  .bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 }
 
