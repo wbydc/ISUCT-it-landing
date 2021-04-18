@@ -108,7 +108,7 @@ export default Vue.extend({
     return {
       contacts: [
         {
-          content: 'г. Иваново, Шереметевский пр., д. 14, каб. 36',
+          content: this.$t('contacts.adress1').toString(),
           url: 'https://yandex.ru/maps/5/ivanovo/house/sheremetevskiy_prospekt_14/YEkYfw9mSEcHQFtsfXV4eHpgZg==/'
             + '?ll=40.986061%2C56.999804&z=17',
           icon: 'map-marker',
@@ -131,7 +131,7 @@ export default Vue.extend({
       ],
       contacts2: [
         {
-          content: 'г. Иваново, Шереметевский пр., д. 7, к. 223',
+          content: this.$t('contacts.adress2').toString(),
           url: 'https://yandex.ru/maps/5/ivanovo/house/sheremetevskiy_prospekt_14/YEkYfw9mSEcHQFtsfXV4eHpgZg==/'
             + '?ll=40.986061%2C56.999804&z=17',
           icon: 'map-marker',

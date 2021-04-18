@@ -112,6 +112,8 @@
   "contacts": {
     "title": "Contact information",
     "subtitle": "Contact the admissions office",
+    "adress1": "14, Sheremetievskiy Avenue, Ivanovo, 153000, Russia",
+    "adress2": "7, Sheremetievskiy Avenue, Ivanovo, 153000, Russia",
     "form": {
       "title": "Leave your contacts",
       "text": "And we ourselves will contact and tell you about all the details on the content of educational programs",

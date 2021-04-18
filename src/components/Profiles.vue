@@ -202,27 +202,30 @@ export default Vue.extend({
       isExpanded: false,
       selected: 0,
       option: 0,
-      profiles: [
+    };
+  },
+  computed: {
+    profiles() {
+      return [
         {
           src: 'images/profiles/1.png',
-          title: 'Информационнные системы и технологии',
           exams: {
             required: [
-              this.$t('profiles.exams.list.math').toString(),
-              this.$t('profiles.exams.list.russian').toString(),
+              this.$t('profiles.exams.list.math'),
+              this.$t('profiles.exams.list.russian'),
             ],
             optional: [
-              this.$t('profiles.exams.list.informatics').toString(),
-              this.$t('profiles.exams.list.english').toString(),
-              this.$t('profiles.exams.list.physics').toString(),
+              this.$t('profiles.exams.list.informatics'),
+              this.$t('profiles.exams.list.english'),
+              this.$t('profiles.exams.list.physics'),
             ],
             educated: [
-              this.$t('profiles.exams.list.economics').toString(),
+              this.$t('profiles.exams.list.economics'),
             ],
           },
           types: [
             {
-              title: this.$t('profiles.types.fulltime').toString(),
+              title: this.$t('profiles.types.fulltime'),
               slots: 44,
               length: '4 года',
               payd: 52,
@@ -234,24 +237,23 @@ export default Vue.extend({
         },
         {
           src: 'images/profiles/2.png',
-          title: 'Анализ данных и цифровые финансовые технологии',
           exams: {
             required: [
-              this.$t('profiles.exams.list.math').toString(),
-              this.$t('profiles.exams.list.russian').toString(),
+              this.$t('profiles.exams.list.math'),
+              this.$t('profiles.exams.list.russian'),
             ],
             optional: [
-              this.$t('profiles.exams.list.informatics').toString(),
-              this.$t('profiles.exams.list.english').toString(),
-              this.$t('profiles.exams.list.physics').toString(),
+              this.$t('profiles.exams.list.informatics'),
+              this.$t('profiles.exams.list.english'),
+              this.$t('profiles.exams.list.physics'),
             ],
             educated: [
-              this.$t('profiles.exams.list.economics').toString(),
+              this.$t('profiles.exams.list.economics'),
             ],
           },
           types: [
             {
-              title: this.$t('profiles.types.fulltime').toString(),
+              title: this.$t('profiles.types.fulltime'),
               slots: 44,
               length: '4 года',
               payd: 52,
@@ -260,7 +262,7 @@ export default Vue.extend({
               ege: true,
             },
             {
-              title: this.$t('profiles.types.extramural').toString(),
+              title: this.$t('profiles.types.extramural'),
               slots: 10,
               length: '5 лет / 3 года и 10 месяцев',
               payd: 150,
@@ -273,27 +275,26 @@ export default Vue.extend({
         },
         {
           src: 'images/profiles/3.png',
-          title: 'Менеджмент в химической и нефтегазовой промышленности',
           exams: {
             required: [
-              this.$t('profiles.exams.list.math').toString(),
-              this.$t('profiles.exams.list.russian').toString(),
+              this.$t('profiles.exams.list.math'),
+              this.$t('profiles.exams.list.russian'),
             ],
             optional: [
-              this.$t('profiles.exams.list.social').toString(),
-              this.$t('profiles.exams.list.history').toString(),
-              this.$t('profiles.exams.list.informatics').toString(),
-              this.$t('profiles.exams.list.english').toString(),
-              this.$t('profiles.exams.list.physics').toString(),
-              this.$t('profiles.exams.list.geography').toString(),
+              this.$t('profiles.exams.list.social'),
+              this.$t('profiles.exams.list.history'),
+              this.$t('profiles.exams.list.informatics'),
+              this.$t('profiles.exams.list.english'),
+              this.$t('profiles.exams.list.physics'),
+              this.$t('profiles.exams.list.geography'),
             ],
             educated: [
-              this.$t('profiles.exams.list.economics').toString(),
+              this.$t('profiles.exams.list.economics'),
             ],
           },
           types: [
             {
-              title: this.$t('profiles.types.fulltime').toString(),
+              title: this.$t('profiles.types.fulltime'),
               slots: 0,
               length: '4 года',
               payd: 50,
@@ -302,7 +303,7 @@ export default Vue.extend({
               ege: true,
             },
             {
-              title: this.$t('profiles.types.parttime').toString(),
+              title: this.$t('profiles.types.parttime'),
               slots: 0,
               length: '5 лет / 3 года и 10 месяцев',
               payd: 100,
@@ -312,7 +313,7 @@ export default Vue.extend({
               options: true,
             },
             {
-              title: this.$t('profiles.types.extramural').toString(),
+              title: this.$t('profiles.types.extramural'),
               slots: 0,
               length: '5 лет / 3 года и 10 месяцев',
               payd: 100,
@@ -323,14 +324,22 @@ export default Vue.extend({
             },
           ],
         },
-      ],
-    };
+      ];
+    },
   },
   methods: {
     expand(i: number) {
       this.selected = i;
       this.option = 0;
       this.isExpanded = true;
+    },
+  },
+  watch: {
+    // eslint-disable-next-line func-names
+    '$i18n.locale': function () {
+      this.$nextTick(() => {
+        this.$forceUpdate();
+      });
     },
   },
 });
