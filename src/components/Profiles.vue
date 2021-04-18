@@ -13,11 +13,11 @@
             <v-img :src="profile.src" />
           </div>
           <v-card-title>
-            <h3>{{ profile.title }}</h3>
+            <h3>{{ $t(`profiles.titles[${i}]`) }}</h3>
           </v-card-title>
           <v-card-text>
             <p>{{ $t('profiles.optional') }}</p>
-            <p><span>{{ profile.exams.optional }}</span></p>
+            <p><span>{{ profile.exams.optional.join(', ') }}</span></p>
           </v-card-text>
           <v-card-actions>
             <span>
@@ -43,7 +43,7 @@
           <div class="title">
             <v-row>
               <v-col cols="11" xs="5">
-                <h2>{{ profiles[selected].title }}</h2>
+                <h2>{{ $t(`profiles.titles[${selected}]`) }}</h2>
               </v-col>
               <v-col cols="1">
                 <v-btn @click="isExpanded = false" plain>
@@ -54,7 +54,7 @@
           </div>
 
           <div class="types">
-            <h3>{{ $t('profiles.types') }}</h3>
+            <h3>{{ $t('profiles.types.title') }}</h3>
             <div class="options">
               <v-btn
                 v-for="(type, i) in profiles[selected].types"
@@ -114,20 +114,28 @@
               <v-col sm="4" cols="6">
                 <v-card flat class="vr-xs">
                   <v-card-title>
-                    {{ $t('profiles.cards.gov') }}
+                    {{ $t('profiles.cards.gov.title') }}
                   </v-card-title>
                   <v-card-text>
-                    {{ profiles[selected].types[option].gov ? 'Присутствует' : 'Отсутствует' }}
+                    {{
+                      profiles[selected].types[option].gov
+                        ? $t('profiles.cards.gov.yes')
+                        : $t('profiles.cards.gov.no')
+                    }}
                   </v-card-text>
                 </v-card>
               </v-col>
               <v-col sm="4" cols="12">
                 <v-card flat class="vr">
                   <v-card-title>
-                    {{ $t('profiles.cards.ege') }}
+                    {{ $t('profiles.cards.ege.title') }}
                   </v-card-title>
                   <v-card-text>
-                    {{ profiles[selected].types[option].ege ? 'Действует' : 'Не действует' }}
+                    {{
+                      profiles[selected].types[option].ege
+                        ? $t('profiles.cards.ege.yes')
+                        : $t('profiles.cards.ege.no')
+                    }}
                   </v-card-text>
                 </v-card>
               </v-col>
@@ -143,7 +151,7 @@
                     {{ $t('profiles.exams.required') }}
                   </v-card-title>
                   <v-card-text>
-                    {{ profiles[selected].exams.required }}
+                    {{ profiles[selected].exams.required.join(', ') }}
                   </v-card-text>
                 </v-card>
               </v-col>
@@ -153,7 +161,7 @@
                     {{ $t('profiles.exams.optional') }}
                   </v-card-title>
                   <v-card-text>
-                    {{ profiles[selected].exams.optional }}
+                    {{ profiles[selected].exams.optional.join(', ') }}
                   </v-card-text>
                 </v-card>
               </v-col>
@@ -163,7 +171,7 @@
                     {{ $t('profiles.exams.educated') }}
                   </v-card-title>
                   <v-card-text>
-                    {{ profiles[selected].exams.educated }}
+                    {{ profiles[selected].exams.educated.join(', ') }}
                   </v-card-text>
                 </v-card>
               </v-col>
@@ -199,13 +207,22 @@ export default Vue.extend({
           src: 'images/profiles/1.png',
           title: 'Информационнные системы и технологии',
           exams: {
-            required: 'Математика, Русский язык',
-            optional: 'Информатика и ИКТ, Иностранный язык, Физика',
-            educated: 'Экономика и управление',
+            required: [
+              this.$t('profiles.exams.list.math').toString(),
+              this.$t('profiles.exams.list.russian').toString(),
+            ],
+            optional: [
+              this.$t('profiles.exams.list.informatics').toString(),
+              this.$t('profiles.exams.list.english').toString(),
+              this.$t('profiles.exams.list.physics').toString(),
+            ],
+            educated: [
+              this.$t('profiles.exams.list.economics').toString(),
+            ],
           },
           types: [
             {
-              title: 'Очное',
+              title: this.$t('profiles.types.fulltime').toString(),
               slots: 44,
               length: '4 года',
               payd: 52,
@@ -219,26 +236,35 @@ export default Vue.extend({
           src: 'images/profiles/2.png',
           title: 'Анализ данных и цифровые финансовые технологии',
           exams: {
-            required: 'Математика, Русский язык',
-            optional: 'Информатика и ИКТ, Иностранный язык, Физика',
-            educated: 'Экономика и управление',
+            required: [
+              this.$t('profiles.exams.list.math').toString(),
+              this.$t('profiles.exams.list.russian').toString(),
+            ],
+            optional: [
+              this.$t('profiles.exams.list.informatics').toString(),
+              this.$t('profiles.exams.list.english').toString(),
+              this.$t('profiles.exams.list.physics').toString(),
+            ],
+            educated: [
+              this.$t('profiles.exams.list.economics').toString(),
+            ],
           },
           types: [
             {
-              title: 'Очное',
+              title: this.$t('profiles.types.fulltime').toString(),
               slots: 44,
               length: '4 года',
               payd: 52,
-              cost: '109 720 руб.',
+              cost: '109 720 ₽',
               gov: true,
               ege: true,
             },
             {
-              title: 'Заочное',
+              title: this.$t('profiles.types.extramural').toString(),
               slots: 10,
               length: '5 лет / 3 года и 10 месяцев',
               payd: 150,
-              cost: '36 060 руб. / 39 100 руб.',
+              cost: '36 060 ₽ / 39 100 ₽',
               gov: true,
               ege: true,
               options: true,
@@ -249,32 +275,44 @@ export default Vue.extend({
           src: 'images/profiles/3.png',
           title: 'Менеджмент в химической и нефтегазовой промышленности',
           exams: {
-            required: 'Математика, Русский язык',
-            optional: 'Обществознание, История,  Информатика и ИКТ, Иностранный язык, География',
-            educated: 'Экономика и управление',
+            required: [
+              this.$t('profiles.exams.list.math').toString(),
+              this.$t('profiles.exams.list.russian').toString(),
+            ],
+            optional: [
+              this.$t('profiles.exams.list.social').toString(),
+              this.$t('profiles.exams.list.history').toString(),
+              this.$t('profiles.exams.list.informatics').toString(),
+              this.$t('profiles.exams.list.english').toString(),
+              this.$t('profiles.exams.list.physics').toString(),
+              this.$t('profiles.exams.list.geography').toString(),
+            ],
+            educated: [
+              this.$t('profiles.exams.list.economics').toString(),
+            ],
           },
           types: [
             {
-              title: 'Очное',
+              title: this.$t('profiles.types.fulltime').toString(),
               slots: 0,
               length: '4 года',
               payd: 50,
-              cost: '93 492 руб.',
+              cost: '93 492 ₽',
               gov: true,
               ege: true,
             },
             {
-              title: 'Очно-Заочное',
+              title: this.$t('profiles.types.parttime').toString(),
               slots: 0,
               length: '5 лет / 3 года и 10 месяцев',
               payd: 100,
-              cost: '36 060 руб. / 39 100 руб.',
+              cost: '36 060 ₽ / 39 100 ₽',
               gov: true,
               ege: true,
               options: true,
             },
             {
-              title: 'Заочное',
+              title: this.$t('profiles.types.extramural').toString(),
               slots: 0,
               length: '5 лет / 3 года и 10 месяцев',
               payd: 100,

@@ -1,10 +1,131 @@
 {
   "header": {
+    "title": "Department of <br> Information Technologies and Digital Economy of <b>ISUCT</b>",
     "links": {
       "about": "About us",
       "profiles": "Profiles",
       "why": "Why us",
       "contacts": "Contacts"
+    },
+    "banner": {
+      "title": "Department of Information Technologies and Digital Economy",
+      "text": "We are launching great career perspectives! Start your career with us!",
+      "button": "Join us"
+    }
+  },
+  "about": {
+    "title": "About us",
+    "text": "The Department of Information Technology and Digital Economy provides training in three levels of education: bachelor degree, magistracy, and postgraduate studies. The creative, energetic and methodically verified approach of our teachers to their work guarantees you a high-quality and modern education.",
+    "text2": "Today the labor market is based on the requirements of widespread digitalization and automation of business processes, on increasing the role of information and communication technologies and expanding their availability. The Department of IT and DE trains highly qualified professionals with a set of knowledge and skills in the implementation of advanced information technologies in industry, trade, the financial sector, and the state apparatus.",
+    "expand": "More details"
+  },
+  "profiles": {
+    "title": "Learning profiles",
+    "optional": "Optional items:",
+    "expand": "More details",
+    "titles": [
+      "Information systems and technologies",
+      "Data analysis and digital financial technology",
+      "Management in the chemical and oil and gas industry"
+    ],
+    "types": {
+      "title": "Training options",
+      "fulltime": "Full-time",
+      "parttime": "Part-time",
+      "extramural": "Extramural"
+    },
+    "budget": "Number of budget places",
+    "cards": {
+      "length": "Training period",
+      "payd": "Number of places with paid education",
+      "cost": "Cost of training on a fee basis",
+      "gov": {
+        "title": "State accreditation",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "ege": {
+        "title": "Discount for the first year for high USE scores",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "options": "(standard / accelerated)"
+    },
+    "exams": {
+      "title": "Entry exams",
+      "required": "Required",
+      "optional": "Optional",
+      "educated": "For prof. educated",
+      "list": {
+        "math": "Math",
+        "russian": "Russian language",
+        "english": "Foreign language",
+        "informatics": "Informatics and ICT",
+        "physics": "Physics",
+        "economics": "Economics and Management",
+        "social": "Social studies",
+        "history": "History",
+        "geography": "Geography"
+      }
+    },
+    "actions": {
+      "apply": "Apply",
+      "contact": "Contact us"
+    }
+  },
+  "why": {
+    "title": "Why us?",
+    "cards": [
+      {
+        "title": "Highly qualified specialists",
+        "text": "The department employs highly qualified specialists with practical experience"
+      },
+      {
+        "title": "Material and technical base",
+        "text": "Computer classes, multimedia equipment, software systems for distance learning, etc."
+      },
+      {
+        "title": "Rich student life",
+        "text": "Student scientific society, student club, board games club, holidays and other events"
+      },
+      {
+        "title": "Additional education is possible",
+        "text": "On the basis of ISUCT it is possible to obtain additional diplomas and certificates in various fields"
+      },
+      {
+        "title": "Getting practical skills",
+        "text": "Our students gain practical skills during summer internships, working in large enterprises"
+      },
+      {
+        "title": "Practice-oriented learning",
+        "text": "Implemented in cooperation with research and applied projects with partner companies"
+      }
+    ]
+  },
+  "spheres": {
+    "title": "Spheres of professional activity of graduates",
+    "text": "Graduates will be able to work as 3D developers, BI architects, cloud service engineers, web programmers, information security analysts, data analysts, data researchers, big data analysts, IT service engineers, software architects, computer systems analysts, engineers labor organization, planning specialists, directors of the oil depot, engineers for the organization and regulation of labor, managers, dispatchers of oil refineries, managers of oil and gas projects, etc."
+  },
+  "partners": {
+    "title": "Our partners"
+  },
+  "contacts": {
+    "title": "Contact information",
+    "subtitle": "Contact the admissions office",
+    "form": {
+      "title": "Leave your contacts",
+      "text": "And we ourselves will contact and tell you about all the details on the content of educational programs",
+      "fields": {
+        "name": "Your name",
+        "phone": "Your phone",
+        "email": "Your email"
+      },
+      "submit": "Submit",
+      "agreement": "By clicking on the button, you consent to the processing of personal data and agree to the privacy policy"
+    },
+    "email": {
+      "subject": "Admission to the Department of IT and DE",
+      "body": "Hello, my name is {name} and I would like to know more about admission to your department. Please contact me by phone {phone} or by Email {email}."
     }
   }
 }

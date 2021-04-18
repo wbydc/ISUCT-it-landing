@@ -131,7 +131,7 @@ export default Vue.extend({
   name: 'Header',
   data() {
     return {
-      locale: 'ru',
+      locale: this.$i18n.locale,
       sidebar: false,
       langs: [
         { code: 'ru', title: 'Русcкий' },
