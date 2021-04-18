@@ -16,8 +16,8 @@ export default Vue.extend({
   },
   methods: {
     go() {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     },
   },
   mounted() {
@@ -35,12 +35,17 @@ export default Vue.extend({
 <style lang="scss" scoped>
 #totop {
   position: fixed;
+  z-index: 10;
   bottom: 40px;
   right: 40px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background: #1B84FF;
+  @media screen and (max-width: 600px) {
+    bottom: 20px;
+    right: calc(50% - 20px);
+  }
   .v-icon {
     font-size: 40px;
     color: #FFF;
