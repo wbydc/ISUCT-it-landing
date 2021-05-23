@@ -64,7 +64,7 @@
             {{ $t('contacts.form.text') }}
           </p>
           <div class="form">
-            <form @submit="sendMail()">
+            <form>
               <v-text-field
                 v-model="form.name"
                 :label="$t('contacts.form.fields.name')"
@@ -85,8 +85,8 @@
                 outlined
               ></v-text-field>
 
-              <v-btn type="submit" @click="() => false">
-                {{ $t('contacts.form.submit') }}
+              <v-btn type="submit" @click="sendMail()">
+                {{ $t("contacts.form.submit") }}
               </v-btn>
             </form>
           </div>
@@ -124,7 +124,7 @@ export default Vue.extend({
           icon: 'phone',
         },
         {
-          content: 'it@isuct.ru',
+          content: 'isuct-it@yandex.ru',
           urlPrefix: 'mailto:',
           icon: 'email',
         },
@@ -169,14 +169,21 @@ export default Vue.extend({
     };
   },
   methods: {
-    sendMail() {
-      const subject: string = encodeURIComponent(this.$t('contacts.email.subject').toString());
-      const body: string = encodeURIComponent(this.$t('contacts.email.body', {
+    async sendMail() {
+      const mailInfo = {
         name: this.form.name,
         phone: this.form.phone,
-        email: this.form.email,
-      }).toString());
-      window.open(`mailto:it@isuct.ru?subject=${subject}&body=${body}`, '_blank');
+        mail: this.form.email,
+      };
+      const response = await fetch('/api/mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify(mailInfo),
+      });
+      //TODO Add check of the response and show success or error message 
+      await response.json();
 
       this.form.name = '';
       this.form.phone = '';

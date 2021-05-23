@@ -24,6 +24,6 @@ module.exports = {
     'no-lonely-if': 'off',
     'no-plusplus': 'off',
     'no-param-reassign': 'off',
-    'linebreak-style': 0
+    'linebreak-style': 0,
   },
 };
