@@ -639,7 +639,7 @@ export default Vue.extend({
         max-width: 100%;
         color: #0E0B0B;
         background: #FFFFFF;
-        height: 100px;
+        height: 120px;
         @media screen and (max-width: 960px) {
           min-height: 80px;
           font-size: 14px;

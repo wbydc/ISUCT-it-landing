@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: "./",
   pluginOptions: {
     i18n: {
       locale: 'ru',
@@ -20,5 +21,6 @@ module.exports = {
   },
   devServer: {
     disableHostCheck: true,
+    proxy: 'http://localhost:4000',
   },
 };
